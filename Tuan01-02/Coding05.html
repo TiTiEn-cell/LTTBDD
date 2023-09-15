@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var dolphins1 = [44, 23 , 71];
+    var koalas1 = [65, 54 , 49]; 
+
+    var dolphins2 = [85, 54 , 41];
+    var koalas2 = [23, 34 , 27];
+
+    var scoreBothTeam1 = dolphins1.concat(koalas1);
+    var scoreBothTeam2 = dolphins2.concat(koalas2);
+
+    var calcAverage  = (scores) =>{
+        var sum = scores.reduce((total,value) => total + value, 0);
+        return sum / scores.length;
+    }
+
+    function checkWinner(avgDolhins,avgKoalas){
+        if(avgDolhins > avgKoalas && avgDolhins /*>= 100*/){
+            console.log("Dolphin wins (" +avgDolhins+ " vs. "+avgKoalas+")");
+        }
+        else if(avgDolhins < avgKoalas && avgKoalas /*>= 100*/){
+            console.log("koalas win (" +avgKoalas+ " vs. "+avgDolhins+")");
+        }
+       /* else if(avgDolhins > avgKoalas && avgDolhins < 100 ||
+        avgDolhins < avgKoalas && avgKoalas < 100 ||
+        avgDolhins == avgKoalas && avgDolhins < 100 ||
+        avgDolhins == avgKoalas && avgKoalas < 100){
+            console.log("no team wins the trophy");
+        }        */    
+    }
+
+    var dolphinsAverageScore1 = calcAverage(dolphins1);
+    var koalasAverageScore1 = calcAverage(koalas1);
+    var scoreBothTeamAverageScore1 = calcAverage(scoreBothTeam1);
+
+    console.log("dolphins's average score: ", dolphinsAverageScore1);
+    console.log("koalas's average score: ",koalasAverageScore1);
+    console.log("Average score for both team data 1: ",scoreBothTeamAverageScore1);
+
+    var winner = checkWinner(dolphinsAverageScore1,koalasAverageScore1);
+    console.log(winner);
+
+
+    console.log("----------------------------------------");
+
+
+    var dolphinsAverageScore2 = calcAverage(dolphins2);
+    var koalasAverageScore2 = calcAverage(koalas2);
+    var scoreBothTeamAverageScore2 = calcAverage(scoreBothTeam2); 
+
+    console.log("dolphins's average score: ", dolphinsAverageScore2);
+    console.log("koalas's average score: ",koalasAverageScore2);
+    console.log("Average score for both team data 2: ",scoreBothTeamAverageScore2);
+
+    var winner = checkWinner(dolphinsAverageScore2,koalasAverageScore2);
+    console.log(winner);
+
+    console.log("Data");
+    var dataWinner = checkWinner(scoreBothTeamAverageScore1,scoreBothTeamAverageScore2);
+    
+
+</script>
+<body>
+    
+</body>
+</html>

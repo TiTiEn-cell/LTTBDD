@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var bill = 275 ;
+    var tip;
+
+   // var checkBill = (bill >= 50 && bill <= 300) ? tip = bill * 15/100 : tip = bill * 20/100;
+    var caculateTip = () => {
+        return (bill >= 50 && bill <= 300) ? tip = bill * 15/100 : tip = bill * 20/100;
+    }
+
+    tip = caculateTip();
+
+    var finalBill = bill + tip;
+
+    console.log("The bill was "+bill+", the tip was: "+tip+", and the total value: "+finalBill);
+
+</script>
+<body>
+    
+</body>
+</html>
